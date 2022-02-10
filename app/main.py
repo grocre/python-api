@@ -37,6 +37,7 @@ def getUser():
         db.session.add(user)
         db.session.commit()
         return {"status": 200}
+
     except Exception as e: 
         return {"Error": e} 
 
@@ -61,5 +62,6 @@ def deleteUsers(id):
         db.session.delete(user_object)
         db.session.commit()
         return {"status": 200}
+        
     except Exception as e: 
         return {"Error": e}
