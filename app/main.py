@@ -57,7 +57,7 @@ def updateUser(id):
 @app.route("/user/<id>", methods=["DELETE"])
 def deleteUsers(id): 
 
-    user_object = User.query.filter_by(id=id)
+    user_object = User.query.filter_by(id=id).first()
     try: 
         db.session.delete(user_object)
         db.session.commit()
